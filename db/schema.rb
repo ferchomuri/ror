@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_032728) do
+ActiveRecord::Schema.define(version: 2021_01_25_030843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,18 +21,8 @@ ActiveRecord::Schema.define(version: 2021_01_25_032728) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "items", force: :cascade do |t|
-    t.bigint "store_id", null: false
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_items_on_product_id"
-    t.index ["store_id"], name: "index_items_on_store_id"
-  end
-
   create_table "keywords", force: :cascade do |t|
     t.string "description"
-    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,10 +32,8 @@ ActiveRecord::Schema.define(version: 2021_01_25_032728) do
     t.string "color"
     t.integer "size"
     t.float "price"
-    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -55,11 +43,8 @@ ActiveRecord::Schema.define(version: 2021_01_25_032728) do
     t.string "zipcode"
     t.string "city"
     t.string "country"
-    t.string "products"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "items", "products"
-  add_foreign_key "items", "stores"
 end
