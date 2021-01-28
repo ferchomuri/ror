@@ -1,0 +1,38 @@
+<div class="container">
+    <figure class="text-center">
+        <h1>Listado de Productos</h1>
+    </figure>
+    <div class="mb-3">
+    <%= link_to "Crear Producto", products_new_path, class:"btn btn-success" %>
+    </div>
+    <table border="1" align="center" class="table table-info table-striped text-center">
+        <tr>
+            <thead>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Tamaño</th>
+                <th>Precio</th>
+                <th colspan="2">Acción</th>
+            </thead>
+        </tr>
+        <% @products.each do |product| %>
+        <tr>
+            <td><%= product.name %></td>
+            <td><%= product.color %></td>
+            <td><%= product.size %></td>
+            <td><%= product.price %></td>
+            <td>
+                <%= link_to "Editar", edit_product_path(product), class:"btn btn-primary" %>
+            </td>
+            <td>
+                <%= link_to "Eliminar", product , method: :delete, data: { confirm: "¿Deseas eliminar el producto?" }, class:"btn btn-danger" %>
+            </td>
+        </tr>
+        <% end %>
+        <tr>
+        <td colspan="8">
+            <%= link_to "Inicio", "/" , class:"btn btn-dark" %>
+        </td>
+    </tr>
+        </table>
+</div>

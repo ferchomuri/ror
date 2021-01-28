@@ -1,0 +1,33 @@
+<div class="container" >
+    <h3 class="text-center mb-3">Insertar nuevo Producto</h3>
+    <div style="display: flex;justify-content: center;align-items: center;">
+        <div class="card w-50 text-center">
+            <div class="card-text">
+                <%= form_for @product do |f| %>
+                    <div>
+                        <%= f.label :name, 'Nombre', class: "form-label mb-3" %>
+                        <%= f.text_field :name, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                        <%= f.label :color, 'Color', class: "form-label mb-3" %>
+                        <%= f.text_field :name, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                        <%= f.label :size, 'Tamaño', class: "form-label mb-3" %>
+                        <%= f.text_field :name, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                    <%= f.label :price, 'Precio', class: "form-label mb-3" %>
+                    <%= f.text_field :name, class:"form-control mb-3 text-center" %>
+                    </div>
+                <div>
+                    <%= f.submit 'Guardar', class: "btn btn-success mb-3" %>
+                </div>
+                <% end %>
+                <div>
+                    <%= link_to "Atras", "/products" , class:"btn btn-dark" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

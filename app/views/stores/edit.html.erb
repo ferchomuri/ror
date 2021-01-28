@@ -1,0 +1,41 @@
+<div class="container" >
+    <h3 class="text-center mb-3">Edición de Tiendas</h3>
+    <div style="display: flex;justify-content: center;align-items: center;">
+        <div class="card w-50 text-center">
+            <div class="card-text">
+                <%= form_for @store do |f| %>
+                    <div>
+                        <%= f.label :name, 'Nombre', class: "form-label mb-3" %>
+                        <%= f.text_field :name, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                    <%= f.label :street, 'Calle', class: "form-label mb-3" %>
+                    <%= f.text_field :street, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                    <%= f.label :number, 'Número', class: "form-label mb-3" %>
+                    <%= f.text_field :number, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                    <%= f.label :zipcode, 'Código Postal', class: "form-label mb-3" %>
+                    <%= f.text_field :zipcode, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                    <%= f.label :city, 'Ciudad', class: "form-label mb-3" %>
+                    <%= f.text_field :city, class:"form-control mb-3 text-center" %>
+                    </div>
+                    <div>
+                    <%= f.label :country, 'País', class: "form-label mb-3" %>
+                    <%= f.text_field :country, class:"form-control mb-3 text-center" %>
+                    </div>
+                <div>
+                    <%= f.submit 'Guardar', class: "btn btn-success mb-3" %>
+                </div>
+                <% end %>
+                <div>
+                    <%= link_to "Atras", "/stores" , class:"btn btn-dark" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
