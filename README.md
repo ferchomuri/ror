@@ -14,10 +14,10 @@ Things you may want to cover:
     I left you some tutorial for installations of this technologies:
       
  * Ruby
- - https://gorails.com/setup/ubuntu/20.04
+    https://gorails.com/setup/ubuntu/20.04
  
  * PostgreSQL
- - https://blog.g3ortega.com/2013/08/usando-postgresql-con-ruby-on-rails.html#.YBItjPtKiV7
+    https://blog.g3ortega.com/2013/08/usando-postgresql-con-ruby-on-rails.html#.YBItjPtKiV7
 
     If you have installed PostgreSQL, you just need run the migrations and seeders for running the project
 
